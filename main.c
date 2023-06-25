@@ -12,13 +12,12 @@ int main(void)
     int len;
     int len2, len3, len4;
 /*	int num = 133534;*/
-	char s[11] = "Abdelrahman";
 
-	len3 = printf("%r\n");
-	len4 = _printf("%r\n");
+	len3 = _printf("%");
+	len4 = printf("%");
 	printf("len = %d and %d\n", len3, len4);
-	len3 = printf("%c\n", s[0]);
-    len4 = _printf("%c\n", s[0]);
+	len3 = printf("%c\n", '+');
+    len4 = _printf("%c\n", '+');
 	printf("len = %d and %d\n", len3, len4);
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");

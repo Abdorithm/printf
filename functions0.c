@@ -8,7 +8,11 @@
  */
 int print_unknown(char c)
 {
-	write(1, "%", 1);
+	char x = '%';
+
+	if(c == '\0')
+		return (-1);
+	write(1, &x, 1);
 	write(1, &c, 1);
 	return (2);
 }
