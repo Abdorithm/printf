@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			i++;
 			new_printed = choose_f(format[i], ap);
 			/* Negative error in failures */
-			if (new_printed == -1)
+			if (new_printed < 0)
 				return (-1);
 			chars += new_printed;
 		}
