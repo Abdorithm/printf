@@ -9,7 +9,8 @@
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int), len = 0, copy = n, negative = 0, size, i = 0;
+	int n = va_arg(args, int);
+	int len = 0, copy = n, negative = 0, size, i = 0;
 	char zero = '0', neg = '-';
 	char *num;
 
