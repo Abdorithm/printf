@@ -9,7 +9,7 @@
  */
 int choose_f(char c, va_list args)
 {
-	int n = 0;
+	int n = -1;
 
 	if (c == 'd' || c == 'i')
 		n = print_int(args);
