@@ -29,11 +29,10 @@ int _printf(const char *format, ...)
 			new_printed = 0;
 			i++;
 			new_printed = choose_f(format[i], ap);
+			/* Negative error in failures */
 			if (new_printed == -1)
 			{
-				write(1, "%", 1);
-				write(1, &format[i], 1);
-				new_printed = 2;
+				return (-1);
 			}
 			chars += new_printed;
 		}
