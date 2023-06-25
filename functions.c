@@ -50,6 +50,7 @@ int print_int(va_list args)
 int print_percent(int one)
 {
 	char s = '%';
+
 	return (write(1, &s, one));
 }
 

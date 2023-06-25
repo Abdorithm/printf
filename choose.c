@@ -1,11 +1,11 @@
 #include "main.h"
 
 /*
- * choose_f - determines which function to use.
- * @c: the special char
- * @args: list of arguments
+ * choose_f: ...
+ * @c: ...
+ * @args: ...
  *
- * Return: void
+ * Return: n
  */
 int choose_f(char c, va_list args)
 {
