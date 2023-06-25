@@ -1,7 +1,7 @@
 #include "main.h"
 
-/*
- * choose_f: ...
+/**
+ * choose_f - chooses the right modifier.
  * @c: ...
  * @args: ...
  *
