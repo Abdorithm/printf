@@ -10,9 +10,9 @@
 int print_int(va_list args)
 {
 	int n = va_arg(args, int);
-	int len = 0;
-	int copy = 0;
-	char tmp, zero = '0';
+	int len = 0, copy = n, negative = 0, size, i = 0;
+	char zero = '0', neg = '-';
+	char *num;
 
 	if (n == 0)
 	{
@@ -21,22 +21,38 @@ int print_int(va_list args)
 	}
 	if (n < 0)
 	{
+		if (n == -2147483648)
+		{
+			negative = 2;
+			n++;
+		}
+		else
+			negative = 1;
 		len++;
-		write(1, "-", 1);
+		write(1, &neg, 1);
 		n = -n;
-	}
-	while (n)
-	{
-		copy *= 10;
-		copy += n % 10;
-		n /= 10;
 	}
 	while (copy)
 	{
 		len++;
-		tmp = (zero + (copy % 10));
-		write(1, &tmp, 1);
 		copy /= 10;
 	}
+	if (negative)
+		size = len - 1;
+	else
+		size = len;
+	num = (char *)malloc(sizeof(char) * size);
+	for (i = size - 1; i >= 0; i--)
+	{
+		num[i] = zero + (n % 10);
+		n /= 10;
+	}
+	if (negative == 2)
+		num[size - 1] = '8';
+	for (i = 0; i < size; i++)
+	{
+		write(1, &num[i], 1);
+	}
+	free(num);
 	return (len);
 }
