@@ -9,8 +9,7 @@
  */
 int print_int(va_list args)
 {
-	int n = va_arg(args, int);
-	int len = 0, copy = n, negative = 0, size, i = 0;
+	int n = va_arg(args, int), len = 0, copy = n, negative = 0, size, i = 0;
 	char zero = '0', neg = '-';
 	char *num;
 
@@ -22,10 +21,7 @@ int print_int(va_list args)
 	if (n < 0)
 	{
 		if (n == -2147483648)
-		{
-			negative = 2;
-			n++;
-		}
+			negative = 2, n++;
 		else
 			negative = 1;
 		len++;
@@ -33,10 +29,7 @@ int print_int(va_list args)
 		n = -n;
 	}
 	while (copy)
-	{
-		len++;
-		copy /= 10;
-	}
+		len++, copy /= 10;
 	if (negative)
 		size = len - 1;
 	else
@@ -50,9 +43,7 @@ int print_int(va_list args)
 	if (negative == 2)
 		num[size - 1] = '8';
 	for (i = 0; i < size; i++)
-	{
 		write(1, &num[i], 1);
-	}
 	free(num);
 	return (len);
 }
