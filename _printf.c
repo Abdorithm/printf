@@ -32,12 +32,6 @@ int _printf(const char *format, ...)
 			/* Negative error in failures */
 			if (new_printed == -1)
 				return (-1);
-			else if (new_printed == -11)
-			{
-				write(1, "%", 1);
-				write(1, &format[i], 1);
-				new_printed = 2;
-			}
 			chars += new_printed;
 		}
 	}

@@ -12,5 +12,6 @@ int print_int(va_list args);
 int print_percent(int one);
 int print_char(va_list args);
 int print_str(va_list args);
+int print_unknown(char c);
 
 #endif /* main.h */

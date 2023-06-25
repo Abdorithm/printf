@@ -19,5 +19,7 @@ int choose_f(char c, va_list args)
 		n = print_char(args);
 	else if (c == 's')
 		n = print_str(args);
+	else
+		n = print_unknown(c);
 	return (n);
 }

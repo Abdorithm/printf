@@ -11,12 +11,11 @@ int main(void)
 {
     int len;
     int len2, len3, len4;
-	int num = 133534;
-	int num1 = 32524;
+/*	int num = 133534;*/
 	char s[11] = "Abdelrahman";
 
-	len3 = printf("%%number %d\tnumber%d\n", num, num1);
-	len4 = _printf("%%number %d\tnumber%d\n", num, num1);
+	len3 = printf("%r\n");
+	len4 = _printf("%r\n");
 	printf("len = %d and %d\n", len3, len4);
 	len3 = printf("%c\n", s[0]);
     len4 = _printf("%c\n", s[0]);
