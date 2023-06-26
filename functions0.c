@@ -47,7 +47,7 @@ int print_char(va_list args)
  * print_str - ...
  * @args: ...
  *
- * Return: length of strings
+ * Return: length of string
  */
 int print_str(va_list args)
 {
@@ -62,3 +62,24 @@ int print_str(va_list args)
 	}
 	return (i);
 }
+
+/**
+ * print_rstr - print reversed string
+ * @args: ...
+ *
+ * Return: length of string
+ */
+int print_rstr(va_list args)
+{
+	int i = 0, len = 0;
+	char *s = va_arg(args, char *);
+
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
+		len++;
+	for (i = len - 1; i >= 0; i--)
+		write(1, &s[i], 1);
+	return (len);
+}
+

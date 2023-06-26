@@ -9,25 +9,9 @@
  */
 int main(void)
 {
-    int len;
-    int len2, len3, len4;
-/*	int num = 133534;*/
+	int len4;
 
-	len3 = _printf("%");
-	len4 = printf("%");
-	printf("len = %d and %d\n", len3, len4);
-	len3 = printf("%c\n", '+');
-    len4 = _printf("%c\n", '+');
-	printf("len = %d and %d\n", len3, len4);
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
-	_printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
+	len4 = _printf("%r\n", "ABCD");
+	printf("Length:[%d, %i]\n", len4, len4);
     return (0);
 }
