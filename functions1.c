@@ -27,7 +27,6 @@ int print_int(va_list args)
 		else
 			negative = 1;
 		len++;
-		write(1, &neg, 1);
 		n = -n;
 	}
 	while (copy)
@@ -37,13 +36,17 @@ int print_int(va_list args)
 	else
 		size = len;
 	num = (char *)malloc(sizeof(char) * size);
+	if (num == NULL)
+		return (-1);
 	for (i = size - 1; i >= 0; i--)
 	{
 		num[i] = zero + (n % 10);
 		n /= 10;
 	}
-	if (negative == 2)
-		num[size - 1] = '8';
+	if (negative == 1)
+		write(1, &neg, 1);
+	else if (negative == 2)
+		num[size - 1] = '8', write(1, &neg, 1);
 	for (i = 0; i < size; i++)
 		write(1, &num[i], 1);
 	free(num);
