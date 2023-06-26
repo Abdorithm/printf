@@ -11,7 +11,7 @@ int main(void)
 {
 	int len4;
 
-	len4 = _printf("%r\n", "ABCD");
+	len4 = _printf("%R\n", "ABCD is 1234");
 	printf("Length:[%d, %i]\n", len4, len4);
     return (0);
 }

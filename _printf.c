@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list ap;
 	int i, chars = 0, new_printed = 0;
 
-	/* process the string normally except char % with s, c, d, r, or i */
+	/* process the string normally except char % with s, c, d, r, R, or i */
 	if (format == NULL)
 		return (-1);
 

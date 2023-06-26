@@ -21,6 +21,8 @@ int choose_f(char c, va_list args)
 		n = print_str(args);
 	else if (c == 'r')
 		n = print_rstr(args);
+	else if (c == 'R')
+		n = print_rot13_str(args);
 	else
 		n = print_unknown(c);
 	return (n);

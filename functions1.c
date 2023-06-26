@@ -48,3 +48,36 @@ int print_int(va_list args)
 	free(num);
 	return (len);
 }
+
+/**
+ * print_rot13_str - ...
+ * @args: ...
+ *
+ * Return: length of string
+ */
+int print_rot13_str(va_list args)
+{
+	int i = 0;
+	char *s = va_arg(args, char *);
+	char x;
+
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] >= 'a' && s[i] <= 'z')
+		{
+			x = s[i] - 'a';
+			x = 'a' + ((x + 13) % 26);
+		}
+		else if (s[i] >= 'A' && s[i] <= 'Z')
+		{
+			x = s[i] - 'A';
+			x = 'A' + ((x + 13) % 26);
+		}
+		else
+			x = s[i];
+		write(1, &x, 1);
+	}
+	return (i);
+}
