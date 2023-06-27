@@ -3,12 +3,54 @@
 /**
  * _putchar - prints a character
  * @c: the character to be printed
- * 
+ *
  * Return: 1 on success, -1 on error
  */
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * get_size - get size of numbers' digits
+ * @n: number
+ * @b: base
+ *
+ * Return: size
+ */
+int get_size(unsigned int n, int b)
+{
+	int size = 0;
+
+	while (n)
+	{
+		size++;
+		n /= b;
+	}
+	return (size);
+}
+
+/**
+ * check_hex_format - checks hex format
+ * @rem: remainder
+ * @f: format
+ *
+ * Return: ascii value of a letter
+ */
+int check_hex_format(int rem, char f)
+{
+	char *hex = "abcdef";
+	char *HEX = "ABCDEF";
+
+	if (f == 'x')
+	{
+		return (hex[rem - 10]);
+	}
+	if (f == 'X')
+	{
+		return (HEX[rem - 10]);
+	}
+	return (0);
 }
 
 /**
@@ -18,11 +60,11 @@ int _putchar(char c)
  *
  * Return: printed characters
  */
-int convert_to_base(va_list args, int b)
+int convert_to_base(va_list args, int b, char format)
 {
-	int i, size = 0;
+	int i, size, remainder;
 	char *num_str;
-	unsigned int num = va_arg(args, unsigned int), num_cp = num;
+	unsigned int num = va_arg(args, unsigned int);
 
 	if (num == 0)
 	{
@@ -30,18 +72,20 @@ int convert_to_base(va_list args, int b)
 		return (1);
 	}
 
-	while (num_cp)
-	{
-		size++;
-		num_cp /= b;
-	}
+	size = get_size(num, b);
 	num_str = (char *)malloc(sizeof(char) * size);
 	if (num_str == NULL)
 		return (-1);
-	
+
 	i = size - 1;
 	while (num)
 	{
+		remainder = num % b;
+		if (b == 16 && remainder > 9)
+		{
+			remainder = check_hex_format(remainder, format);
+			num_str[i] = remainder;
+		}
 		num_str[i] = '0' + (num % b);
 		num /= b;
 		i--;

@@ -29,6 +29,8 @@ int choose_f(char c, va_list args)
 		n = print_unsigned(args);
 	else if (c == 'o')
 		n = print_octal(args);
+	else if (c == 'x')
+		n = print_hex(args);
 	else
 		n = print_unknown(c);
 	return (n);

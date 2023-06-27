@@ -4,7 +4,7 @@
  * print_unsigned - prints unsigned integer
  * @args: argument list
  *
- * Returns: number of printed characters
+ * Return: number of printed characters
  */
 int print_unsigned(va_list args)
 {
@@ -24,7 +24,7 @@ int print_unsigned(va_list args)
 		size++;
 		num_cp /= 10;
 	}
-	
+
 	num_str = (char *)malloc(sizeof(char) * size);
 	if (num_str == NULL)
 	{
@@ -54,28 +54,21 @@ int print_unsigned(va_list args)
  * print_octal - prints octal numbers
  * @args: argument list
  *
- * Returns: number of printed charactes
+ * Return: number of printed charactes
  */
 int print_octal(va_list args)
 {
-	return (convert_to_base(args, 8));
+	return (convert_to_base(args, 8, 'o'));
 }
 
 /**
  * print_hex - prints hexadecimal numbers in lower case
- * @args - arguument list
+ * @args: argument list
  *
- * Returns: number of printed characters
+ * Return: number of printed characters
  */
-/**int print_hex(va_list args)
+int print_hex(va_list args)
 {
+	return (convert_to_base(args, 16, 'x'));
 
-}*/
-
-
-
-
-
-
-
-
+}

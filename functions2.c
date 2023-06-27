@@ -8,5 +8,5 @@
  */
 int print_binary(va_list args)
 {
-	return (convert_to_base(args, 2));
+	return (convert_to_base(args, 2, 'b'));
 }
