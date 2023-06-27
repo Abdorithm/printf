@@ -72,3 +72,14 @@ int print_hex(va_list args)
 	return (convert_to_base(args, 16, 'x'));
 
 }
+
+/**
+ * print_HEX - prints hexadecimal in uppuercase
+ * @args: argument list
+ *
+ * Return: number of printed characters
+ */
+int print_HEX(va_list args)
+{
+	return (convert_to_base(args, 16, 'X'));
+}
