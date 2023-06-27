@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_binary - converts unsinged int to binary
@@ -11,9 +12,10 @@ int print_binary(va_list args)
 	int i = 0, size = 0;
 	char zero = '0';
 	char *binary_num;
-	unsigned int num = va_arg(args, unsigned int), num_cp = num;
+	int n = va_arg(args, int);
+	unsigned int num = n, num_cp;
 
-	if (num > INT_MAX)
+	if (n < 0)
 	{
 		return (-1);
 	}
