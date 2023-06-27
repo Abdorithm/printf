@@ -86,7 +86,10 @@ int convert_to_base(va_list args, int b, char format)
 			remainder = check_hex_format(remainder, format);
 			num_str[i] = remainder;
 		}
-		num_str[i] = '0' + (num % b);
+		else
+		{
+			num_str[i] = '0' + (num % b);
+		}
 		num /= b;
 		i--;
 	}
