@@ -48,13 +48,12 @@ int print_unsigned(va_list args)
 	}
 
 	i = size - 1;
-	while (i >= 0)
+	while (num)
 	{
 		num_str[i] = '0' + (num % 10);
 		num /= 10;
 		i--;
 	}
-	/* num_str[size] = '\0'; */
 
 	i = 0;
 	while (i < size)
@@ -74,8 +73,9 @@ int print_unsigned(va_list args)
  * Returns: number of printed charactes
  */
 /*int print_octal(va_list args)
-{ 
-} */
+{
+
+}*/
 
 
 

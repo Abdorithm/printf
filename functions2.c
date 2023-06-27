@@ -8,7 +8,7 @@
  */
 int print_binary(va_list args)
 {
-	int i = 0, size = 0;
+	int i, size = 0;
 	char zero = '0';
 	char *binary_num;
 	unsigned int num = va_arg(args, unsigned int), num_cp = num;
@@ -19,9 +19,6 @@ int print_binary(va_list args)
 		return (1);
 	}
 
-	if (num < 1)
-		return (-1);
-
 	while (num_cp)
 	{
 		size++;
@@ -30,19 +27,20 @@ int print_binary(va_list args)
 	binary_num = (char *)malloc(sizeof(char) * size);
 	if (binary_num == NULL)
 		return (-1);
-
+	
+	i = size - 1;
 	while (num)
 	{
 		binary_num[i] = zero + (num % 2);
 		num /= 2;
-		i++;
+		i--;
 	}
 
-	i = size;
-	while (i >= 0)
+	i = 0;
+	while (i < size)
 	{
 		write(1, &binary_num[i], 1);
-		i--;
+		i++;
 	}
 
 	free(binary_num);
