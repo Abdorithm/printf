@@ -66,3 +66,53 @@ int print_unsigned(va_list args)
 	return (size);
 
 }
+
+/**
+ * print_octal - prints octal numbers
+ * @args: argument list
+ *
+ * Returns: number of printed charactes
+ */
+/*int print_octal(va_list args)
+{ 
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

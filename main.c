@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    _printf("%u\n", 52521);
-    return (0);
+	_printf("%b\n", 4294967295);
+	return (0);
 }
