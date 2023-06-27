@@ -10,6 +10,8 @@
 /* FUNCTIONS */
 int _printf(const char *format, ...);
 int choose_f(char c, va_list args);
+int convert_to_base(va_list args, int b);
+int _putchar(char c);
 int print_int(va_list args);
 int print_percent(int one);
 int print_char(va_list args);
@@ -19,5 +21,5 @@ int print_rstr(va_list args);
 int print_rot13_str(va_list args);
 int print_binary(va_list args);
 int print_unsigned(va_list args);
-
+int print_octal(va_list args);
 #endif /* main.h */

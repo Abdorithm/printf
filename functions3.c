@@ -1,17 +1,6 @@
 #include "main.h"
 
 /**
- * _putchar - prints a character
- * @c: the character to be printed
- *
- * Return: 1 on success, -1 on error
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * print_unsigned - prints unsigned integer
  * @args: argument list
  *
@@ -22,17 +11,12 @@ int print_unsigned(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int num_cp = num;
 	char *num_str;
-	int n = num, i, size = 0;
+	int i, size = 0;
 
 	if (num == 0)
 	{
 		_putchar('0');
 		return (1);
-	}
-
-	if (n < 1)
-	{
-		return (-1);
 	}
 
 	while (num_cp)
@@ -72,10 +56,10 @@ int print_unsigned(va_list args)
  *
  * Returns: number of printed charactes
  */
-/*int print_octal(va_list args)
+int print_octal(va_list args)
 {
-
-}*/
+	return (convert_to_base(args, 8));
+}
 
 
 
