@@ -33,6 +33,8 @@ int choose_f(char c, va_list args)
 		n = print_hex(args);
 	else if (c == 'X')
 		n = print_HEX(args);
+	else if (c == 'S')
+		n = print_string(args);
 	else
 		n = print_unknown(c);
 	return (n);
