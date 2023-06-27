@@ -11,12 +11,16 @@ int print_binary(va_list args)
 	int i = 0, size = 0;
 	char zero = '0';
 	char *binary_num;
-	unsigned int num = va_arg(args, unsigned int), num_cp = num;
+	int num = va_arg(args, int), num_cp = num;
 
 	if (num == 0)
 	{
 		write(1, &zero, 1);
 		return (1);
+	}
+	if (num < 0)
+	{
+		return (-1);
 	}
 
 	while (num_cp)
