@@ -61,37 +61,16 @@ int print_octal(va_list args)
 	return (convert_to_base(args, 8));
 }
 
+/**
+ * print_hex - prints hexadecimal numbers in lower case
+ * @args - arguument list
+ *
+ * Returns: number of printed characters
+ */
+/**int print_hex(va_list args)
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 
 

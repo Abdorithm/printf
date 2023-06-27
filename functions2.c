@@ -8,41 +8,5 @@
  */
 int print_binary(va_list args)
 {
-	int i, size = 0;
-	char zero = '0';
-	char *binary_num;
-	unsigned int num = va_arg(args, unsigned int), num_cp = num;
-
-	if (num == 0)
-	{
-		write(1, &zero, 1);
-		return (1);
-	}
-
-	while (num_cp)
-	{
-		size++;
-		num_cp /= 2;
-	}
-	binary_num = (char *)malloc(sizeof(char) * size);
-	if (binary_num == NULL)
-		return (-1);
-	
-	i = size - 1;
-	while (num)
-	{
-		binary_num[i] = zero + (num % 2);
-		num /= 2;
-		i--;
-	}
-
-	i = 0;
-	while (i < size)
-	{
-		write(1, &binary_num[i], 1);
-		i++;
-	}
-
-	free(binary_num);
-	return (size);
+	return (convert_to_base(args, 2));
 }
