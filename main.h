@@ -16,5 +16,6 @@ int print_str(va_list args);
 int print_unknown(char c);
 int print_rstr(va_list args);
 int print_rot13_str(va_list args);
+int print_binary(va_list args);
 
 #endif /* main.h */

@@ -23,6 +23,8 @@ int choose_f(char c, va_list args)
 		n = print_rstr(args);
 	else if (c == 'R')
 		n = print_rot13_str(args);
+	else if (c == 'b')
+		n = print_binary(args);
 	else
 		n = print_unknown(c);
 	return (n);
