@@ -25,6 +25,8 @@ int choose_f(char c, va_list args)
 		n = print_rot13_str(args);
 	else if (c == 'b')
 		n = print_binary(args);
+	else if (c == 'u')
+		n = print_unsigned(args);
 	else
 		n = print_unknown(c);
 	return (n);
