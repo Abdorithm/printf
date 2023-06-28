@@ -7,9 +7,6 @@
  */
 int main(void)
 {
-	void *addr;
-
-	addr = (void *)0x7ffe637541f0;
-	_printf("%p\n", addr);
+	_printf("%+d\n", 23);
 	return (0);
 }
