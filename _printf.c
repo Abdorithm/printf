@@ -1,6 +1,36 @@
 #include "main.h"
 
 /**
+ * check_flags - checks flags
+ * @f: flag
+ * @f2: format
+ *
+ * Return: void
+ */
+int check_flags(char f, char f2)
+{
+	if (f == '+')
+	{
+		_putchar('+');
+		return (1);
+	}
+	if (f == ' ')
+	{
+		_putchar(' ');
+		return (1);
+	}
+	if (f == '#')
+	{
+		_putchar('0');
+		if (f2 == 'x')
+			_putchar('x');
+		if (f2 == 'X')
+			_putchar('X');
+		return (1);
+	}
+	return (0);
+}
+/**
  * _printf - a variadic function that prints formatted strings.
  * @format: input string
  *
@@ -28,16 +58,8 @@ int _printf(const char *format, ...)
 		{
 			new_printed = 0;
 			i++;
-
-			if (format[i] == '+')
+			if (check_flags(format[i], format[i + 1]))
 			{
-				_putchar('+');
-				new_printed++;
-				i++;
-			}
-			if (format[i] == ' ')
-			{
-				_putchar(' ');
 				new_printed++;
 				i++;
 			}

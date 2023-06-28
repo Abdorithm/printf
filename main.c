@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	_printf("% d\n", 23);
+	_printf("%#X\n", 23);
 	return (0);
 }
