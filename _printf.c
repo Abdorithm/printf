@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 				new_printed++;
 				i++;
 			}
+			if (format[i] == ' ')
+			{
+				_putchar(' ');
+				new_printed++;
+				i++;
+			}
 			new_printed = choose_f(format[i], ap);
 			/* Negative error in failures */
 			if (new_printed < 0)
