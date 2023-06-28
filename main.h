@@ -14,7 +14,7 @@ int convert_to_base(va_list args, int b, char format);
 int _putchar(char c);
 int get_size(unsigned int n, int b);
 int check_hex_format(int rem, char f);
-void cvt_hex(unsigned int c);
+int cvt_hex(unsigned long int c, char f);
 int print_int(va_list args);
 int print_percent(int one);
 int print_char(va_list args);
@@ -28,5 +28,6 @@ int print_octal(va_list args);
 int print_hex(va_list args);
 int print_HEX(va_list args);
 int print_string(va_list args);
+int print_address(va_list args);
 
 #endif /* main.h */

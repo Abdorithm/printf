@@ -57,6 +57,7 @@ int check_hex_format(int rem, char f)
  * convert_to_base - converts unsinged int to base b
  * @args: list of arguements
  * @b: base to convert to
+ * @format: specifier format
  *
  * Return: printed characters
  */
@@ -100,7 +101,6 @@ int convert_to_base(va_list args, int b, char format)
 		_putchar(num_str[i]);
 		i++;
 	}
-
 	free(num_str);
 	return (size);
 }

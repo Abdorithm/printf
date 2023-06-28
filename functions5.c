@@ -3,14 +3,15 @@
 /**
  * cvt_hex - prints ascii code of a non-printable character
  * @c: character
+ * @f: format
  *
- * Return: void
+ * Return: number of printed charcters
  */
-void cvt_hex(unsigned int c)
+int cvt_hex(unsigned long int c, char f)
 {
 	int i, size = 0;
-	unsigned num = c;
-	char *hex_char, *hex = "ABCDEF";
+	unsigned long int num = c;
+	char *hex_char, *hex = "abcdef", *HEX = "ABCDEF";
 
 	while (num)
 	{
@@ -26,7 +27,10 @@ void cvt_hex(unsigned int c)
 		{
 			if ((c % 16) > 9)
 			{
-				hex_char[i] = hex[(c % 16) - 10];
+				if (f == 'x')
+					hex_char[i] = hex[(c % 16) - 10];
+				if (f == 'X')
+					hex_char[i] = HEX[(c % 16) - 10];
 			}
 			else
 			{
@@ -41,7 +45,10 @@ void cvt_hex(unsigned int c)
 			_putchar(hex_char[i]);
 			i++;
 		}
+		free(hex_char);
+		return (size);
 	}
+	return (0);
 }
 
 /**
@@ -65,16 +72,17 @@ int print_string(va_list args)
 			_putchar('\\');
 			_putchar('x');
 
-			len = len + 4;
+			len = len + 2;
 			curr_char = s[i];
 
 			if (curr_char < 16)
 			{
 				_putchar('0');
+				len++;
 			}
 
 			/* convert to hexadecimal */
-			cvt_hex(curr_char);
+			len = len + cvt_hex(curr_char, 'X');
 		}
 		else
 		{
